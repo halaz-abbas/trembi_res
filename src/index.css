@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 5rem;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Global Responsive Utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Image Responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Text Responsive */
+h1, h2, h3, h4, h5, h6 {
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+p {
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Form Elements Responsive */
+input, textarea, select {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Button Responsive */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Media Query Adjustments */
+@media (max-width: 768px) {
+  body {
+    padding-top: 4rem;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 3.5rem;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    padding: 0 8px;
+  }
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

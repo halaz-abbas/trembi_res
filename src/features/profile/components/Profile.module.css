@@ -1,0 +1,344 @@
+.profileContainer {
+  display: flex;
+  padding: 40px;
+  background: #fafafa;
+  font-family: Arial, sans-serif;
+  min-height: calc(100vh - 5rem);
+  margin-top: 5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  height: 100%;
+  border: 1px solid #eee;
+}
+
+.sidebarUser {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.userImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebarUser h3 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.sidebarMenu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebarMenu li {
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.active {
+  background: #ffe8e8;
+  color: #e40000;
+}
+
+.logout {
+  margin-top: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #666;
+}
+
+/* Main content */
+.content {
+  width: 100%;
+  margin-left: 30px;
+  padding: 30px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.content h2 {
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.changeImage {
+  color: #ff4040;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Form */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.full {
+  grid-column: span 2;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 6px;
+  color: #666;
+  font-size: 14px;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.saveBtn {
+  margin-top: 25px;
+  background: #ff3b30;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.saveBtn:hover {
+  background: #e02720;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+  .profileContainer {
+    padding: 30px;
+  }
+  
+  .sidebar {
+    width: 220px;
+    padding: 20px;
+  }
+  
+  .content {
+    margin-left: 25px;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 968px) {
+  .profileContainer {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .sidebarUser {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .sidebarUser h3 {
+    margin-top: 0;
+  }
+  
+  .sidebarMenu {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .sidebarMenu li {
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+  
+  .logout {
+    margin-top: 20px;
+  }
+  
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .profileContainer {
+    padding: 15px;
+    margin-top: 4rem;
+  }
+  
+  .sidebar {
+    padding: 15px;
+  }
+  
+  .sidebarUser {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .userImg {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .sidebarUser h3 {
+    font-size: 14px;
+  }
+  
+  .sidebarMenu {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .sidebarMenu li {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .content h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .full {
+    grid-column: span 1;
+  }
+  
+  .profileHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profileContainer {
+    padding: 10px;
+    margin-top: 3.5rem;
+  }
+  
+  .sidebar {
+    padding: 12px;
+  }
+  
+  .userImg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .sidebarUser h3 {
+    font-size: 13px;
+  }
+  
+  .sidebarMenu li {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+  
+  .content {
+    padding: 15px;
+  }
+  
+  .content h2 {
+    font-size: 18px;
+  }
+  
+  .formGrid {
+    gap: 15px;
+  }
+  
+  .formGroup input {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .formGroup label {
+    font-size: 13px;
+  }
+  
+  .saveBtn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+  
+  .changeImage {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  .profileContainer {
+    padding: 8px;
+  }
+  
+  .sidebar {
+    padding: 10px;
+  }
+  
+  .content {
+    padding: 12px;
+  }
+  
+  .content h2 {
+    font-size: 16px;
+  }
+  
+  .formGroup input {
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  .formGroup label {
+    font-size: 12px;
+  }
+  
+  .saveBtn {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+}

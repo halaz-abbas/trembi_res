@@ -1,0 +1,129 @@
+.whySection {
+  padding: 96px 162px;
+  background: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.whyTitle {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.whyTitle h2 {
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.highlightRed {
+  color: #dc2626;
+}
+
+.highlightText {
+  color: #1f2937;
+}
+
+.whyDescription {
+  font-size: 32px;
+  line-height: 50px;
+  max-width: 1116px;
+  margin: 0 auto;
+  text-align: center;
+  color: #1f2937;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+  .whySection {
+    padding: 80px 100px;
+  }
+  
+  .whyTitle h2 {
+    font-size: 56px;
+    line-height: 1.2;
+  }
+  
+  .whyDescription {
+    font-size: 28px;
+    line-height: 44px;
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 968px) {
+  .whySection {
+    padding: 60px 60px;
+  }
+  
+  .whyTitle h2 {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+  
+  .whyDescription {
+    font-size: 24px;
+    line-height: 38px;
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .whySection {
+    padding: 50px 30px;
+  }
+  
+  .whyTitle {
+    margin-bottom: 32px;
+  }
+  
+  .whyTitle h2 {
+    font-size: 36px;
+    line-height: 1.3;
+  }
+  
+  .whyDescription {
+    font-size: 18px;
+    line-height: 30px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whySection {
+    padding: 40px 20px;
+  }
+  
+  .whyTitle {
+    margin-bottom: 24px;
+  }
+  
+  .whyTitle h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+  
+  .whyDescription {
+    font-size: 16px;
+    line-height: 26px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .whySection {
+    padding: 30px 15px;
+  }
+  
+  .whyTitle h2 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  
+  .whyDescription {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

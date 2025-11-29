@@ -1,0 +1,106 @@
+/* MAIN CONTAINER */
+.successContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  font-family: "Inter", sans-serif;
+}
+
+/* LEFT SECTION */
+.successLeft {
+  width: 50%;
+  text-align: left;
+}
+
+.successTitle {
+  font-size: 32px;
+  font-weight: 600;
+  color: #14c38e;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* PROGRESS STEPS */
+.progressWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 12px;
+}
+
+.circle {
+  width: 42px;
+  height: 42px;
+  background: #14c38e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.check {
+  font-size: 20px;
+}
+
+.line {
+  width: 60px;
+  height: 2px;
+  background: #14c38e;
+}
+
+/* SUCCESS TEXTS */
+.successCreated {
+  font-size: 22px;
+  font-weight: 600;
+  color: #14c38e;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.successSub {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.verifyText {
+  font-size: 15px;
+  color: #555;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.openEmail {
+  color: #ff3b30;
+  text-decoration: none;
+}
+
+/* RIGHT SECTION */
+.successRight {
+  width: 50%;
+  text-align: center;
+}
+
+.logo {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.systemText {
+  margin-top: -10px;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.successImage {
+  width: 90%;
+  max-width: 600px;
+}

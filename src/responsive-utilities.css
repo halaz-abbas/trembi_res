@@ -1,0 +1,228 @@
+/* Global Responsive Utilities */
+
+/* Container Classes */
+.responsive-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.responsive-section {
+  width: 100%;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+/* Flexbox Utilities */
+.flex-responsive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.flex-column-mobile {
+  display: flex;
+}
+
+/* Grid Utilities */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Text Responsive */
+.text-responsive {
+  font-size: clamp(14px, 2.5vw, 18px);
+  line-height: 1.6;
+}
+
+.heading-responsive {
+  font-size: clamp(24px, 5vw, 48px);
+  line-height: 1.2;
+}
+
+/* Image Responsive */
+.img-responsive {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* Button Responsive */
+.btn-responsive {
+  padding: clamp(8px, 2vw, 16px) clamp(16px, 4vw, 32px);
+  font-size: clamp(14px, 2.5vw, 18px);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Form Responsive */
+.form-responsive {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.input-responsive {
+  width: 100%;
+  padding: clamp(8px, 2vw, 16px);
+  font-size: clamp(14px, 2.5vw, 16px);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* Card Responsive */
+.card-responsive {
+  width: 100%;
+  max-width: 400px;
+  padding: clamp(16px, 3vw, 32px);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+/* Spacing Utilities */
+.spacing-responsive {
+  margin: clamp(16px, 3vw, 32px) 0;
+}
+
+.padding-responsive {
+  padding: clamp(16px, 3vw, 32px);
+}
+
+/* Media Query Breakpoints */
+@media (max-width: 1200px) {
+  .responsive-container {
+    padding: 0 40px;
+  }
+  
+  .responsive-section {
+    padding: 50px 40px;
+  }
+  
+  .flex-responsive {
+    gap: 16px;
+  }
+  
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 968px) {
+  .responsive-container {
+    padding: 0 30px;
+  }
+  
+  .responsive-section {
+    padding: 40px 30px;
+  }
+  
+  .flex-column-mobile {
+    flex-direction: column;
+  }
+  
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-container {
+    padding: 0 20px;
+  }
+  
+  .responsive-section {
+    padding: 30px 20px;
+  }
+  
+  .flex-responsive {
+    gap: 12px;
+  }
+  
+  .grid-responsive {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .btn-responsive {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-container {
+    padding: 0 15px;
+  }
+  
+  .responsive-section {
+    padding: 25px 15px;
+  }
+  
+  .flex-responsive {
+    gap: 10px;
+  }
+  
+  .card-responsive {
+    max-width: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .responsive-container {
+    padding: 0 10px;
+  }
+  
+  .responsive-section {
+    padding: 20px 10px;
+  }
+}
+
+/* Utility Classes for Common Responsive Patterns */
+.hide-mobile {
+  display: block;
+}
+
+.show-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+  
+  .show-mobile {
+    display: block;
+  }
+}
+
+/* Responsive Typography Scale */
+.text-xs { font-size: clamp(10px, 2vw, 12px); }
+.text-sm { font-size: clamp(12px, 2vw, 14px); }
+.text-base { font-size: clamp(14px, 2.5vw, 16px); }
+.text-lg { font-size: clamp(16px, 3vw, 18px); }
+.text-xl { font-size: clamp(18px, 3.5vw, 20px); }
+.text-2xl { font-size: clamp(20px, 4vw, 24px); }
+.text-3xl { font-size: clamp(24px, 5vw, 30px); }
+.text-4xl { font-size: clamp(28px, 6vw, 36px); }
+.text-5xl { font-size: clamp(32px, 7vw, 48px); }
+
+/* Responsive Spacing Scale */
+.space-xs { margin: clamp(4px, 1vw, 8px); }
+.space-sm { margin: clamp(8px, 2vw, 12px); }
+.space-md { margin: clamp(12px, 3vw, 16px); }
+.space-lg { margin: clamp(16px, 4vw, 24px); }
+.space-xl { margin: clamp(24px, 5vw, 32px); }
+.space-2xl { margin: clamp(32px, 6vw, 48px); }

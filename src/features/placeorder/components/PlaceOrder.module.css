@@ -1,0 +1,83 @@
+.placeorderPage {
+  padding: 40px 0 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.breadcrumb {
+  width: 85%;
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.breadcrumbLink {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbLink:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.orderBox {
+  width: 60%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #eee;
+}
+
+.boxTitle {
+  color: red;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #efefef;
+}
+
+.row span {
+  font-size: 15px;
+}
+
+.red {
+  color: red;
+  font-weight: 600;
+}
+
+.confirmBtn {
+  width: 180px;
+  margin: 25px auto 0;
+  display: block;
+  background: #e63946;
+  color: #fff;
+  padding: 12px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+  text-align: center;
+}
+
+.confirmBtn:hover {
+  background: #c72e3a;
+  color: #fff;
+}
