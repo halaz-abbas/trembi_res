@@ -1,25 +1,32 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "../../../contexts/LanguageContext";
+import { translations } from "../../../utils/translations";
 import styles from "./NavBar.module.css";
-
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, changeLanguage } = useLanguage();
+  const t = translations[language];
   const location = useLocation();
   const isCartOrProductPage = location.pathname.includes('/cart') || location.pathname.includes('/product');
+
+  const handleLanguageChange = (newLanguage) => {
+    changeLanguage(newLanguage);
+  };
 
   return (
     <header className={styles.navbar}>
       <nav className={styles.navbarContainer}>
         <div className={styles.navbarLogo}>
-          <a href="/">
+          <Link to="/">
             <img src="/images/logo.svg" alt="Logo" />
-          </a>
+          </Link>
         </div>
 
         {isCartOrProductPage ? (
           <div className={styles.searchBox}>
-            <input type="text" placeholder="Search..." className={styles.searchInput} />
+            <input type="text" placeholder={t.search} className={styles.searchInput} />
             <svg className={styles.searchIcon} width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
             </svg>
@@ -27,10 +34,10 @@ export default function Navbar() {
         ) : (
           <div className={styles.navbarLinks}>
             <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><a href="/about">About Us</a></li>
+              <li><Link to="/">{t.home}</Link></li>
+              <li><Link to="/contact">{t.contact}</Link></li>
+              <li><Link to="/flat">{t.services}</Link></li>
+              <li><Link to="/about">{t.about}</Link></li>
             </ul>
           </div>
         )}
@@ -46,18 +53,18 @@ export default function Navbar() {
           
           <div className={styles.langDropdown}>
             <button type="button" className={styles.langButton}>
-              <img src="/images/us-flag.svg" alt="English" />
+              <img src={language === 'ar' ? "/images/syria_flag_flat.svg" : "/images/usa_flag.svg"} alt={language === 'ar' ? 'Arabic' : 'English'} />
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={styles.langArrow}>
                 <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z" clipRule="evenodd" />
               </svg>
             </button>
             <div className={styles.langMenu}>
-              <button className={styles.langOption}>
-                <img src="/images/us-flag.svg" alt="English" />
+              <button className={styles.langOption} onClick={() => handleLanguageChange('en')}>
+                <img src="/images/usa_flag.svg" alt="English" />
                 <span>English</span>
               </button>
-              <button className={styles.langOption}>
-                <img src="/images/us-flag.svg" alt="Arabic" />
+              <button className={styles.langOption} onClick={() => handleLanguageChange('ar')}>
+                <img src="/images/syria_flag_flat.svg" alt="Arabic" />
                 <span>العربية</span>
               </button>
             </div>
@@ -69,7 +76,7 @@ export default function Navbar() {
             </Link>
           ) : (
             <Link to="/login" className={styles.loginButton}>
-              Log In
+              {t.login}
             </Link>
           )}
         </div>
@@ -88,33 +95,11 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div className={`${styles.mobileMenuOverlay} ${isMobileMenuOpen ? styles.open : ''}`}>
         <div className={styles.mobileMenuContent}>
-          {!isCartOrProductPage ? (
-            <div className={styles.mobileNavLinks}>
-              <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
-              <Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
-              <a href="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
-            </div>
-          ) : (
-            <div className={styles.mobileSearchBox}>
-              <input type="text" placeholder="Search..." className={styles.mobileSearchInput} />
-              <svg className={styles.mobileSearchIcon} width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-            </div>
-          )}
-          
-          <div className={styles.mobileActions}>
-            {isCartOrProductPage ? (
-              <Link to="/profile" className={styles.mobileUserLink} onClick={() => setIsMobileMenuOpen(false)}>
-                <img src="/images/user-avatar.jpg" alt="User" />
-                <span>Profile</span>
-              </Link>
-            ) : (
-              <Link to="/login" className={styles.mobileLoginButton} onClick={() => setIsMobileMenuOpen(false)}>
-                Log In
-              </Link>
-            )}
+          <div className={styles.mobileNavLinks}>
+            <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>{t.home}</Link>
+            <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>{t.contact}</Link>
+            <Link to="/flat" onClick={() => setIsMobileMenuOpen(false)}>{t.services}</Link>
+            <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>{t.about}</Link>
           </div>
         </div>
       </div>

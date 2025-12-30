@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  width: 95%;
+  max-width: 420px;
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #666;
+}
+
+.closeBtn:hover {
+  color: #000;
+}
+
+.modal h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.passwordField {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.passwordField input {
+  margin-bottom: 0;
+}
+
+.eye {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.signupBtn {
+  width: 100%;
+  padding: 14px;
+  background: #f28c00;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.signupBtn:hover {
+  background: #e07b00;
+}
+
+.divider {
+  text-align: center;
+  margin: 18px 0;
+  position: relative;
+}
+
+.divider span {
+  background: #fff;
+  padding: 0 10px;
+  color: #999;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #eee;
+  z-index: -1;
+}
+
+.googleBtn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.googleBtn:hover {
+  background: #f5f5f5;
+}
+
+.googleBtn img {
+  width: 20px;
+}
+
+.loginText {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.loginText span {
+  color: #f28c00;
+  cursor: pointer;
+}
+
+.loginText span:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.cartPage {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  background: #f7f7f7;
+  min-height: calc(100vh - 80px);
+}
+
+/* LEFT */
+.cartContent {
+  flex: 2;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyCart {
+  text-align: center;
+  color: #777;
+}
+
+.emptyCart img {
+  width: 90px;
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+
+/* RIGHT */
+.cartSidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.card h3 {
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+
+/* RADIO */
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.radio input {
+  display: none;
+}
+
+.customRadio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+}
+
+.radio input:checked + .customRadio {
+  border-color: #f28c00;
+}
+
+.radio input:checked + .customRadio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #f28c00;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* COUPON */
+.coupon {
+  display: flex;
+}
+
+.coupon input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px 0 0 8px;
+  border: 1px solid #ddd;
+  border-right: none;
+}
+
+.coupon button {
+  padding: 10px 16px;
+  border-radius: 0 8px 8px 0;
+  border: 1px solid #ddd;
+  background: #eee;
+  cursor: pointer;
+}
+
+/* SUMMARY */
+.summary .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary .price {
+  color: #f28c00;
+}
+
+.summary hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 12px 0;
+}
+
+.summary .total {
+  font-weight: bold;
+}
+
+.checkoutBtn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #f28c00;
+  color: #fff;
+  font-size: 15px;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .cartPage {
+    flex-direction: column;
+  }
+}

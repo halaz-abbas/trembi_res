@@ -1,4 +1,6 @@
 
+import { restaurantService } from './services/restaurantService.js';
+
 export const menuCategories = ["Popular", "Salad", "Pasta", "Sandwiches", "Pizza", "Burger", "Juice"];
 
 export const menuItems = [
@@ -93,3 +95,44 @@ export const menuItems = [
     image: "/images/Rectangle 77.png"
   }
 ];
+
+// Restaurant data - will be fetched from API
+export const restaurantData = {
+  name: "FLAT BURGER",
+  description: "Best Food, Best Services!",
+  address: "2256 NW 2nd Ave, Miami, Fl, 37214",
+  phone: "+44 543 871 1234",
+  email: "info@termbi.com",
+  rating: 5.0
+};
+
+// API integration functions
+export const fetchMenuData = async () => {
+  try {
+    const [categories, menu] = await Promise.all([
+      restaurantService.getCategories(),
+      restaurantService.getMenu()
+    ]);
+    
+    return {
+      categories: categories.data || menuCategories,
+      items: menu.data || menuItems
+    };
+  } catch (error) {
+    console.error('Failed to fetch menu data:', error);
+    return {
+      categories: menuCategories,
+      items: menuItems
+    };
+  }
+};
+
+export const fetchRestaurantDetails = async () => {
+  try {
+    const response = await restaurantService.getRestaurantDetails();
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch restaurant details:', error);
+    return restaurantData;
+  }
+};

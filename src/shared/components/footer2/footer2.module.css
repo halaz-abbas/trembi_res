@@ -1,0 +1,158 @@
+.footer {
+  background: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  padding: 80px 100px;
+}
+
+.footerLogo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.footerTitle {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footerSocials {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.footerSocials a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #444;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.footerSocials a:hover {
+  background: #ff8c00;
+  border-color: #ff8c00;
+}
+
+.footerProvider {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.footerProvider span {
+  color: #ff8c00;
+}
+
+.footerLink {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.footerHeading {
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+.footerHours {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.footerHours span {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 15px;
+}
+
+.footerLinks a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footerLinks a:hover {
+  color: #ff8c00;
+}
+
+.footerNewsText {
+  color: #ccc;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.footerInput {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  outline: none;
+  font-size: 14px;
+}
+
+.footerBtn {
+  width: 100%;
+  padding: 14px;
+  background: #ff6b35;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footerBtn:hover {
+  background: #e55a2b;
+}
+
+/* Bottom Bar */
+.footerBottom {
+  border-top: 1px solid #222;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footerContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+    padding: 60px 30px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
